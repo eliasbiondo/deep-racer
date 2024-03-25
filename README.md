@@ -33,6 +33,34 @@ The reward function employs the following strategy:
 - **Steering**: Penalizes the vehicle if the steering angle is too high, which can be indicative of oversteering.
 - **Progress**: Rewards the vehicle for making progress along the track.
 
+## Hyperparameters
+
+The training of the AWS DeepRacer model utilizes the following hyperparameters:
+
+- **Gradient descent batch size**: 64
+- **Entropy**: 0.01
+- **Discount factor**: 0.99
+- **Loss type**: Huber
+- **Learning rate**: 0.0003
+- **Number of experience episodes between each policy-updating iteration**: 20
+- **Number of epochs**: 10
+
+## Action Space
+
+The action space for the AWS DeepRacer is defined as follows:
+
+- **Type**: Continuous
+- **Speed**: [ 0.7 : 2.5 ] m/s
+- **Steering angle**: [ -30 : 30 ] °
+
+## Training Framework and Algorithm
+
+The AWS DeepRacer model is trained using the following framework and algorithm:
+
+- **Framework**: Tensorflow
+- **Reinforcement learning algorithm**: Proximal Policy Optimization (PPO)
+- **Training duration**: 4 hours
+
 ## Usage
 
 To use this reward function, copy the code from `reward_function.py` into the AWS DeepRacer console's reward function editor. Train your model with the function to incentivize the desired behaviors outlined above.
